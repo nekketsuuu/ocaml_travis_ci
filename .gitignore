@@ -1,0 +1,7 @@
+# auto-generated files
+/_build
+*.install
+.merlin
+
+# backup files
+*~

@@ -1,0 +1,8 @@
+(jbuild_version 1)
+
+(executable
+ ((name main)))
+
+(install
+ ((section bin)
+  (files ((main.exe as hello_world)))))

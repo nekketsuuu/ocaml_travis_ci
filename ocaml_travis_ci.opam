@@ -1,0 +1,15 @@
+opam-version: "1.2"
+name: "hello_world"
+version: "1.0"
+maintainer: "nekketsuuu@gmail.com"
+authors: ["Takuma Ishikawa"]
+homepage: "https://github.com/nekketsuuu/ocaml_travis_ci"
+bug-reports: "https://github.com/nekketsuuu/ocaml_travis_ci/issues"
+dev-repo: "https://github.com/nekketsuuu/ocaml_travis_ci.git"
+license: "MIT"
+build: [
+  ["jbuilder" "build" "--only-packages=hello_world" "-j" jobs "@install"]
+]
+build-test: [  # This field is deprecated at OPAM >= 2.0.0. Instead, use `with-test`.
+  ["jbuilder" "runtest" "-j" jobs]
+]
