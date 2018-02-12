@@ -6,7 +6,16 @@ sudo: false
 services:
   - docker
 install: wget https://raw.githubusercontent.com/ocaml/ocaml-travisci-skeleton/master/.travis-docker.sh
-script: bash -ex ./.travis-docker.sh
+script:
+  - |
+    function show_log() {
+      for logfile in "/home/opam/.opam/${OCAML_VERSION}"/build/*/* ; do
+        echo "${logfile}" ;
+        cat "${logfile}" ;
+      done ;
+      exit $1
+    }
+    bash -ex ./.travis-docker.sh || show_log $?
 env:
   global:
     - PACKAGE="hello_world"
@@ -15,11 +24,3 @@ env:
     - DISTRO=alpine OCAML_VERSION=4.06.0
     - DISTRO=ubuntu-16.04 OCAML_VERSION=4.05.0
     - DISTRO=ubuntu-16.04 OCAML_VERSION=4.06.0
-after_failure:
-  - ls /home/opam/.opam/${OCAML_VERSION}/build/
-  - ls /home/opam/.opam/${OCAML_VERSION}/build/hello_world.1.0/
-  - |
-    for logfile in "/home/opam/.opam/${OCAML_VERSION}"/build/*/* ; do
-      echo "${logfile}" ;
-      cat "${logfile}" ;
-    done
