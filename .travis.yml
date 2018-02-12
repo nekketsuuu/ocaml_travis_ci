@@ -18,7 +18,7 @@ env:
 after_failure:
   - echo "$HOME"
   - |
-    for logfile in "${HOME}/.opam/${OCAML_VERSION}"/build/*/* ; do
+    for logfile in "/home/opam/.opam/${OCAML_VERSION}"/build/*/* ; do
       echo "${logfile}" ;
       cat "${logfile}" ;
     done
