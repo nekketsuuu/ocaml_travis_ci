@@ -5,6 +5,7 @@ os:
  - osx
 language: c
 sudo: required
+cache: apt
 install: wget https://raw.githubusercontent.com/ocaml/ocaml-ci-scripts/master/.travis-opam.sh
 script: bash -ex ./.travis-opam.sh
 env:
