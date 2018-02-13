@@ -1,0 +1,13 @@
+# Documentation: https://github.com/ocaml/ocaml-ci-scripts/blob/master/README-travis.md
+
+os: linux
+language: c
+sudo: false
+install: wget https://raw.githubusercontent.com/ocaml/ocaml-ci-scripts/master/.travis-opam.sh
+script: bash -ex ./.travis-opam.sh
+env:
+  global:
+    - PACKAGE="hello_world"
+  matrix:
+    - OCAML_VERSION=4.05
+    - OCAML_VERSION=4.06
