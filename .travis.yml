@@ -1,11 +1,15 @@
 # Documentation: https://github.com/ocaml/ocaml-ci-scripts/blob/master/README-travis.md
+# Also, https://github.com/ocaml/opam-repository is useful.
 
 os:
  - linux
  - osx
 language: c
 sudo: required
-cache: apt
+cache:
+  apt: true
+  directories:
+    - $HOME/Library/Caches/Homebrew
 install: wget https://raw.githubusercontent.com/ocaml/ocaml-ci-scripts/master/.travis-opam.sh
 script: bash -ex ./.travis-opam.sh
 env:
