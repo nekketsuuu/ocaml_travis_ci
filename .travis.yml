@@ -1,8 +1,8 @@
 # Documentation: https://github.com/ocaml/ocaml-ci-scripts/blob/master/README-travis-runner.md
+# Also see: https://docs.travis-ci.com/user/docker/
 
-os: linux
 language: c
-sudo: false
+sudo: required
 services:
   - docker
 install: wget https://raw.githubusercontent.com/ocaml/ocaml-travisci-skeleton/master/.travis-docker.sh
@@ -10,23 +10,8 @@ script: bash -ex ./.travis-docker.sh
 env:
   global:
     - PACKAGE="hello_world"
-    - |
-      POST_INSTALL_HOOK='
-        function show_log() {
-          echo "Output logs" ;
-          for logfile in "/home/opam/.opam/${OCAML_VERSION}"/build/*/* ; do
-            echo "$logfile" ;
-            cat "$logfile" ;
-          done
-        } ;
-        for exists in "/home/opam/.opam/${OCAML_VERSION}"/build/*/* ; do
-          [ -e "$exists" ] && show_log ;
-          break ;
-        done
-      '
-
   matrix:
-    - DISTRO=alpine OCAML_VERSION=4.05.0
-    - DISTRO=alpine OCAML_VERSION=4.06.0
-    - DISTRO=ubuntu-16.04 OCAML_VERSION=4.05.0
-    - DISTRO=ubuntu-16.04 OCAML_VERSION=4.06.0
+    - DISTRO="alpine" OCAML_VERSION="4.05.0"
+    - DISTRO="alpine" OCAML_VERSION="4.06.0"
+    - DISTRO="ubuntu-16.04" OCAML_VERSION="4.05.0"
+    - DISTRO="ubuntu-16.04" OCAML_VERSION="4.06.0"
