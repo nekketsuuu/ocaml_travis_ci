@@ -5,8 +5,8 @@ language: c
 sudo: required
 services:
   - docker
-install: FORK_USER=nekketsuuu FORK_BRANCH=dirty-hack-for-debug wget https://raw.githubusercontent.com/nekketsuuu/ocaml-ci-scripts/dirty-hack-for-debug/.travis-docker.sh
-script: bash -ex ./.travis-docker.sh
+install: wget https://raw.githubusercontent.com/nekketsuuu/ocaml-ci-scripts/dirty-hack-for-debug/.travis-docker.sh
+script: FORK_USER=nekketsuuu FORK_BRANCH=dirty-hack-for-debug bash -ex ./.travis-docker.sh
 env:
   global:
     - PACKAGE="hello_world"
