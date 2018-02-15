@@ -1,4 +1,4 @@
-<sup>Note: The newest README is on [`master`][master] branch.</sup>
+<sup>Note: The newest README is on the [`master`][master] branch.</sup>
 
 ## About
 
@@ -10,6 +10,8 @@ In this repository, the [`master`][master] branch contains a very simple "Hello,
 
 ## Benchmarks
 
+Notes: Each branch was executed only five times to measure the time. Because of this, **the error range may be large.**
+
 | Branch                                                                   |   Time for `linux` (min) | Time for `osx` (min) | Memo                                                              |
 |:-------------------------------------------------------------------------|-------------------------:|---------------------:|:------------------------------------------------------------------|
 | [OPAM with cache][opam]                                                  |           8--10 (ubuntu) |                8--14 | uses `.travis-opam.sh` on [ocaml-ci-scripts].                     |
@@ -20,10 +22,6 @@ In this repository, the [`master`][master] branch contains a very simple "Hello,
 | [Simplified Docker image on `language: general`][bobbypriambodo-general] |   2--3 (alpine & ubuntu) |      (not available) | is based on [bobbypriambodo's method][bobbypriambodo-post].       |
 | [Simplified Docker image on `language: bash`][bobbypriambodo-bash]       |   1--2 (alpine & ubuntu) |      (not available) | is based on [bobbypriambodo's method][bobbypriambodo-post].       |
 | [Downloaded OPAM, without cache][zozozo]                                 |           6--14 (ubuntu) |      (not available) | is based on [zozozo's method][zozozo-post].                       |
-
-### Notes
-
-Each branch was executed only five times to measure the time. Because of this, **the error range may be large.**
 
 ## See Also
 
