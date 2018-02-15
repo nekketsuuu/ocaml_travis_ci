@@ -9,6 +9,8 @@ services:
   - docker
 matrix:
   include:
+    - os: osx
+      env: OCAML_VERSION="4.05"
     - os: linux
       env: DISTRO="alpine" OCAML_VERSION="4.05.0"
     - os: linux
@@ -17,8 +19,6 @@ matrix:
       env: DISTRO="ubuntu-16.04" OCAML_VERSION="4.05.0"
     - os: linux
       env: DISTRO="ubuntu-16.04" OCAML_VERSION="4.05.0"
-    - os: osx
-      env: OCAML_VERSION="4.05"
 install: |
   # Use docker for linux, plain opam for osx
   if [[ "${TRAVIS_OS_NAME}" == "linux" ]] ; then
