@@ -19,6 +19,7 @@ before_script:
   - sed -i "s/%tests%/${TESTS}/g"                 Dockerfile.template
   - sed -i "s/%distro$/${DISTRO}/g"               Dockerfile.template
   - sed -i "s/%ocaml_version%/${OCAML_VERSION}/g" Dockerfile.template
+  - cat Dockerfile.template
 script: docker-compose run --rm tester
 env:
   global:
