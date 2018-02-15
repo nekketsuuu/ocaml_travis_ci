@@ -11,6 +11,7 @@
 # Also see:
 #   - https://docs.travis-ci.com/user/docker/#Using-Docker-Compose
 
+language: bash
 sudo: required
 services:
   - docker
