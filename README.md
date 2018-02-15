@@ -10,7 +10,7 @@ In this repository, the [`master`][master] branch contains a very simple "Hello,
 
 ## Benchmarks
 
-Notes: Each branch was executed only five times to measure the time. Because of this, **the error range may be large.**
+Note: Each branch was executed only five times to measure the time. Because of this, **the error range may be large.**
 
 | Branch                                                                   |   Time for `linux` (min) | Time for `osx` (min) | Memo                                                              |
 |:-------------------------------------------------------------------------|-------------------------:|---------------------:|:------------------------------------------------------------------|
