@@ -16,9 +16,9 @@ In this repository, the [`master`][master] branch contains a very simple "Hello,
 | [OPAM without cache][opam-without-cache]                                 |            7--9 (ubuntu) |                8--15 | uses `.travis-opam.sh` on [ocaml-ci-scripts].                     |
 | [Docker (linux only)][docker]                                            |   3--4 (alpine & ubuntu) |      (not available) | uses `.travis-docker.sh` on [ocaml-ci-scripts].                   |
 | [Docker for linux, OPAM for osx][docker-and-osx]                         |   3--4 (alpine & ubuntu) |               14--17 | uses `.travis-docker.sh` for linux and `.travis-opam.sh` for osx. |
-| [Simplified Docker image][bobbypriambodo]                                | 1.5--4 (alpine & ubuntu) |      (not available) | is based on [bobbypriambodo's method][bobbypriambobo-post].       |
-| [Simplified Docker image on `language: general`][bobbypriambodo-general] |   2--3 (alpine & ubuntu) |      (not available) | is based on [bobbypriambodo's method][bobbypriambobo-post].       |
-| [Simplified Docker image on `language: bash`][bobbypriambodo-bash]       |   1--2 (alpine & ubuntu) |      (not available) | is based on [bobbypriambodo's method][bobbypriambobo-post].       |
+| [Simplified Docker image][bobbypriambodo]                                | 1.5--4 (alpine & ubuntu) |      (not available) | is based on [bobbypriambodo's method][bobbypriambodo-post].       |
+| [Simplified Docker image on `language: general`][bobbypriambodo-general] |   2--3 (alpine & ubuntu) |      (not available) | is based on [bobbypriambodo's method][bobbypriambodo-post].       |
+| [Simplified Docker image on `language: bash`][bobbypriambodo-bash]       |   1--2 (alpine & ubuntu) |      (not available) | is based on [bobbypriambodo's method][bobbypriambodo-post].       |
 | [Downloaded OPAM, without cache][zozozo]                                 |           6--14 (ubuntu) |      (not available) | is based on [zozozo's method][zozozo-post].                       |
 
 ### Notes
