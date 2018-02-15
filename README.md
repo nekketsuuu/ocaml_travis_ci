@@ -14,14 +14,14 @@ Notes: Each branch was executed only five times to measure the time. Because of 
 
 | Branch                                                                   |   Time for `linux` (min) | Time for `osx` (min) | Memo                                                              |
 |:-------------------------------------------------------------------------|-------------------------:|---------------------:|:------------------------------------------------------------------|
-| [OPAM with cache][opam]                                                  |           8--10 (ubuntu) |                8--14 | uses `.travis-opam.sh` on [ocaml-ci-scripts].                     |
-| [OPAM without cache][opam-without-cache]                                 |            7--9 (ubuntu) |                8--15 | uses `.travis-opam.sh` on [ocaml-ci-scripts].                     |
+| [OPAM 1 with cache][opam]                                                |           8--10 (ubuntu) |                8--14 | uses `.travis-opam.sh` on [ocaml-ci-scripts].                     |
+| [OPAM 1 without cache][opam-without-cache]                               |            7--9 (ubuntu) |                8--15 | uses `.travis-opam.sh` on [ocaml-ci-scripts].                     |
 | [Docker (linux only)][docker]                                            |   3--4 (alpine & ubuntu) |      (not available) | uses `.travis-docker.sh` on [ocaml-ci-scripts].                   |
-| [Docker for linux, OPAM for osx][docker-and-osx]                         |   3--4 (alpine & ubuntu) |               14--17 | uses `.travis-docker.sh` for linux and `.travis-opam.sh` for osx. |
+| [Docker for linux, OPAM 1 for osx][docker-and-osx]                       |   3--4 (alpine & ubuntu) |               14--17 | uses `.travis-docker.sh` for linux and `.travis-opam.sh` for osx. |
 | [Simplified Docker image][bobbypriambodo]                                | 1.5--4 (alpine & ubuntu) |      (not available) | is based on [bobbypriambodo's method][bobbypriambodo-post].       |
 | [Simplified Docker image on `language: general`][bobbypriambodo-general] |   2--3 (alpine & ubuntu) |      (not available) | is based on [bobbypriambodo's method][bobbypriambodo-post].       |
 | [Simplified Docker image on `language: bash`][bobbypriambodo-bash]       |   1--2 (alpine & ubuntu) |      (not available) | is based on [bobbypriambodo's method][bobbypriambodo-post].       |
-| [Downloaded OPAM, without cache][zozozo]                                 |           6--14 (ubuntu) |      (not available) | is based on [zozozo's method][zozozo-post].                       |
+| [Downloaded OPAM 2, without cache][zozozo]                               |           6--14 (ubuntu) |      (not available) | is based on [zozozo's method][zozozo-post].                       |
 
 ## See Also
 
