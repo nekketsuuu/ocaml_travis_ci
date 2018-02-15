@@ -8,7 +8,7 @@
 # Actually, it may be unnecessary to use docker-compose for this simple package,
 # but I leave it for extension.
 # 
-# Also see:
+# See also:
 #   - https://docs.travis-ci.com/user/docker/#Using-Docker-Compose
 
 sudo: required
