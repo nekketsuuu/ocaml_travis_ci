@@ -1,18 +1,33 @@
-# Documentation: https://github.com/ocaml/ocaml-ci-scripts/blob/master/README-travis-runner.md
+# Documentation:
+#   - https://github.com/ocaml/ocaml-ci-scripts/blob/master/README-travis-runner.md
+#   - https://github.com/ocaml/ocaml-ci-scripts/blob/master/README-travis.md
 # Also see: https://docs.travis-ci.com/user/docker/
 
 language: c
 sudo: required
 services:
   - docker
-install: wget https://raw.githubusercontent.com/ocaml/ocaml-ci-scripts/master/.travis-docker.sh
-script: bash -ex ./.travis-docker.sh
+matrix:
+  include:
+    - os: linux
+      env: DISTRO="alpine" OCAML_VERSION="4.05.0"
+    - os: linux
+      env: DISTRO="alpine" OCAML_VERSION="4.06.0"
+    - os: linux
+      env: DISTRO="ubuntu-16.04" OCAML_VERSION="4.05.0"
+    - os: linux
+      env: DISTRO="ubuntu-16.04" OCAML_VERSION="4.05.0"
+    - os: osx
+      env: OCAML_VERSION="4.05"
+install: |
+  # Use docker for linux, plain opam for osx
+  if [[ "${TRAVIS_OS_NAME}" == "linux" ]] ; then
+    wget -O .travis-ci.sh https://raw.githubusercontent.com/ocaml/ocaml-ci-scripts/master/.travis-docker.sh ;
+  else
+    wget -O .travis-ci.sh https://raw.githubusercontent.com/ocaml/ocaml-ci-scripts/master/.travis-opam.sh ;
+  fi
+script: bash -ex ./.travis-ci.sh
 env:
   global:
     - PACKAGE="hello_world"
     - TESTS="true"
-  matrix:
-    - DISTRO="alpine" OCAML_VERSION="4.05.0"
-    - DISTRO="alpine" OCAML_VERSION="4.06.0"
-    - DISTRO="ubuntu-16.04" OCAML_VERSION="4.05.0"
-    - DISTRO="ubuntu-16.04" OCAML_VERSION="4.06.0"
