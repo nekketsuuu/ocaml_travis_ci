@@ -15,7 +15,7 @@ script: bash -ex ./.travis-opam.sh
 env:
   global:
     - PACKAGE="hello_world"
-    - TESTS=true
+    - TESTS="true"
   matrix:
-    - OCAML_VERSION=4.05
-    - OCAML_VERSION=4.06
+    - OCAML_VERSION="4.05"
+    - OCAML_VERSION="4.06"
