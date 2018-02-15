@@ -11,6 +11,7 @@
 # Also see:
 #   - https://docs.travis-ci.com/user/docker/#Using-Docker-Compose
 #   - https://github.com/travis-ci/travis-ci/issues/4895
+#   - https://github.com/travis-ci/docs-travis-ci-com/issues/910#issuecomment-359387753
 
 language: generic
 sudo: required
