@@ -1,0 +1,30 @@
+# This branch is based on zozozo's method.
+# See:
+#   - https://discuss.ocaml.org/t/what-are-the-best-practices-for-setting-up-continuous-integration-for-ocaml-projects/1499/6
+#   - https://github.com/Gbury/mSAT/blob/696002bcf711859e84b4ab8cc4bbcded8b18580f/.travis.yml
+
+language: c
+#cache:
+#  directories:
+#    - $HOME/.opam
+env:
+  global:
+    - OPAMBUILDTEST=true
+  matrix:
+    - OCAML_VERSION=4.05.0
+    - OCAML_VERSION=4.06.0
+before_install:
+  # Download and use opam2
+  # This script doesn't build opam, just downloads the executable.
+  - wget -O ${HOME}/opam https://github.com/ocaml/opam/releases/download/2.0.0-beta6/opam-2.0.0-beta6-x86_64-linux
+  - chmod +x ${HOME}/opam
+  - export OPAMYES=1
+  - export OPAMJOBS=2
+  - ${HOME}/opam init --compiler=${OCAML_VERSION}
+  - eval `${HOME}/opam config env`
+  - export OPAMVERBOSE=1
+install:
+  - ${HOME}/opam pin add --no-action hello_world .
+  - ${HOME}/opam install --deps-only hello_world
+script:
+  - ${HOME}/opam install hello_world
