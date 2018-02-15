@@ -13,3 +13,6 @@ build: [
 build-test: [  # This field is deprecated at OPAM >= 2.0.0. Instead, use `with-test`.
   ["jbuilder" "runtest" "-j" jobs]
 ]
+depends: [
+  "jbuilder" {build}
+]
