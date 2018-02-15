@@ -2,15 +2,15 @@
 
 ## About
 
-This repository shows the result of *Travis CI benchmarks for OCaml*.
+This repository shows the result of my *Travis CI benchmarks for OCaml*.
 
-Travis CI of a OCaml project sometimes takes a lot of time. In some projects, this is because Travis runs `make world` of the OCaml compiler for each single job. Therefore there are needs for a faster way for CI.
+A Travis CI job for a OCaml project sometimes takes a lot of time. In some projects, this is because Travis runs `make world` of the OCaml compiler for each single job. Therefore there are needs for a faster way of CI.
 
-In this repository, the [`master`][master] branch contains a very simple "Hello, world!" project. Other branches have their own `.travis.yml` to use CI. The benchmark for each branch's method is written below. The details of results are [here](https://travis-ci.org/nekketsuuu/ocaml_travis_ci/branches).
+In this repository, the [`master`][master] branch contains a very simple "Hello, world!" project. Other branches have their own `.travis.yml` to use CI. The benchmark for each branch is written below. The details of the result are [here](https://travis-ci.org/nekketsuuu/ocaml_travis_ci/branches).
 
 ## Benchmarks
 
-Note: Each branch was executed only five times to measure the time. Because of this, **the error range may be large.**
+Note: Each branch was executed only five times to measure the time. Therefore, **the error range may be large.**
 
 | Branch                                                                   |   Time for `linux` (min) | Time for `osx` (min) | Memo                                                              |
 |:-------------------------------------------------------------------------|-------------------------:|---------------------:|:------------------------------------------------------------------|
