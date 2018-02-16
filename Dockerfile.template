@@ -3,8 +3,8 @@ FROM ocaml/opam:%distro%_ocaml-%ocaml_version%
 WORKDIR build
 ADD . .
 ENV OPAMYES 1
-ENV OPAMBUILDTEST %tests%
 RUN opam pin add --no-action %package% . \
  && opam depext --update %package% \
  && opam install --deps-only %package%
+ENV OPAMBUILDTEST %tests%
 CMD opam install %package%
