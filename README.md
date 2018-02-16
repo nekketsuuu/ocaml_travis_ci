@@ -23,8 +23,6 @@ Note: Each branch was executed only five times to measure the time. Therefore, *
 | [Simplified Docker image on `language: bash`][bobbypriambodo-bash]       |   1--2 (alpine & ubuntu) |      (not available) | is based on [bobbypriambodo's method][bobbypriambodo-post].       |
 | [Downloaded OPAM 2, without cache][zozozo]                               |           6--14 (ubuntu) |      (not available) | is based on [zozozo's method][zozozo-post].                       |
 
-Be aware that each branch runs different commands (e.g., one runs `opam update`, but another does not).
-
 ## See Also
 
 * https://github.com/ocaml/ocaml-ci-scripts
