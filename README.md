@@ -10,7 +10,7 @@ In this repository, the [`master`][master] branch contains a very simple "Hello,
 
 ## Benchmarks
 
-Note: Each branch was executed only five times to measure the time. Therefore, **the error range may be large.**
+Note: Each branch was executed only five times to measure the time. Therefore, **the error range may be large.** Also, be aware that each branch runs different commands. For example, bobbypriambodo's method doesn't run `opam update`.
 
 | Branch                                                                   |   Time for `linux` (min) | Time for `osx` (min) | Memo                                                              |
 |:-------------------------------------------------------------------------|-------------------------:|---------------------:|:------------------------------------------------------------------|
